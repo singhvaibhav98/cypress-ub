@@ -19,15 +19,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
-
       - name: Install dependencies
         run: npm install
 
       - name: Run Cypress tests
         run: |
           echo ${CYPRESS_RECORD_KEY}|
-          npx cypress run --record --key ${CYPRESS_RECORD_KEY}
+          npx cypress run --record --env RECORD_KEY=${CYPRESS_RECORD_KEY}
