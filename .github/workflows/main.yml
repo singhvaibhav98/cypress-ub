@@ -24,5 +24,4 @@ jobs:
 
       - name: Run Cypress tests
         run: |
-          echo ${CYPRESS_RECORD_KEY}|
-          npx cypress run --record --env RECORD_KEY=${CYPRESS_RECORD_KEY}
+          npx cypress run --record --key ${CYPRESS_RECORD_KEY}
