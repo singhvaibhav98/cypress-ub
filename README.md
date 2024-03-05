@@ -1,5 +1,7 @@
 # Cypress Automation Excercise
 
+[![ubank](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/detailed/j7zetb/main&style=flat&logo=cypress)](https://cloud.cypress.io/projects/j7zetb/runs)
+
 UI & API Automation Assignment
 
 ### Github https://github.com/singhvaibhav98/cypress-ub
