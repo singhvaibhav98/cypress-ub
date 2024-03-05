@@ -24,7 +24,7 @@ module.exports = defineConfig({
         supportFile: "cypress/support/commands.js",
     },
     reporter: 'cypress-mochawesome-reporter',
-    video: false,
+    video: true,
     reporterOptions: {
         reportDir: 'reports/mochawesome',
         charts: true,

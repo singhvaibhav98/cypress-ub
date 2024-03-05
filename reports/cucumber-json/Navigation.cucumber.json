@@ -1,0 +1,57 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Navigation Check",
+    "line": 1,
+    "id": "navigation-check",
+    "tags": [],
+    "uri": "Navigation.feature",
+    "elements": [
+      {
+        "id": "navigation-check;test_01:-navigate-to-home-loan-and-then-to-contact-us",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Test_01: Navigate to home loan and then to contact us",
+        "tags": [
+          {
+            "name": "@RunThis",
+            "line": 3
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User opens the website",
+            "result": {
+              "status": "passed",
+              "duration": 11452000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "User navigates to home loan",
+            "result": {
+              "status": "passed",
+              "duration": 1928000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "User navigates to contact us from header menu",
+            "result": {
+              "status": "passed",
+              "duration": 25343000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
