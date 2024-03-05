@@ -31,6 +31,6 @@
   "scripts": {
     "test": "cypress run --reporter mochawesome --env tags='@RunThis'",
     "debug": "cypress open",
-    "cloud": "npx cypress run --record --key c8bde0eb-4a37-4148-a753-6dd7caa66b03"
+    "cloud": "npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}"
   }
 }
