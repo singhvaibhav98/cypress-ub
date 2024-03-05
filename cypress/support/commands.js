@@ -1,7 +1,6 @@
 import addContext from 'mochawesome/addContext';
 import "cypress-real-events";
 import 'cypress-mochawesome-reporter/register';
-import "@shelex/cypress-allure-plugin";
 
 /**
  * Add context in report
