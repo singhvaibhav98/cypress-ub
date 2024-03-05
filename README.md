@@ -45,12 +45,12 @@ and video evidences
 ![img_2.png](img_2.png)
 reports/mochawesome/index.html
 
-###### Cypress cloud
+##### Cypress cloud
 Allows monitoring UI Actions as well as network logs
 Sample - https://cloud.cypress.io/projects/j7zetb/runs/7
 ![img_3.png](img_3.png)
 ![img_4.png](img_4.png)
 
-###### Video Evidence
+##### Video Evidence
 Video will be recorded based on below flag and will be saved in report folder
 ![img_5.png](img_5.png)
