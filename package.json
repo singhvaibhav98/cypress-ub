@@ -1,0 +1,39 @@
+{
+  "name": "UBankAutomation",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@cypress/xpath": "^2.0.3",
+    "cucumber": "^6.0.7",
+    "cypress": "^13.6.6",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "dependencies": {
+    "@cypress/webpack-preprocessor": "^6.0.1",
+    "@shelex/cypress-allure-plugin": "^2.40.1",
+    "allure-commandline": "^2.24.1",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "cypress-multi-reporters": "^1.6.4",
+    "cypress-real-events": "^1.12.0",
+    "mocha": "^10.3.0",
+    "mocha-allure-reporter": "^1.4.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
+    "multiple-cucumber-html-reporter": "^3.5.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "./cypress/stepDefs",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "reports/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "scripts": {
+    "test": "cypress run --reporter mochawesome --headed --browser chrome --env tags='@runthis'",
+    "debug": "cypress open --env tags='@runthis'",
+    "cloud": "npx cypress run --record --key ec0cacad-d5e5-4f66-8648-913b38ac291d"
+  }
+}
