@@ -1,7 +1,7 @@
 import addContext from 'mochawesome/addContext';
 import "cypress-real-events";
-import "@shelex/cypress-allure-plugin";
 import 'cypress-mochawesome-reporter/register';
+import "@shelex/cypress-allure-plugin";
 
 /**
  * Add context in report
@@ -16,7 +16,8 @@ function addTestContext(title, value) {
 function takeScreenshot(message) {
     message = message.split(' ').join('_');
     cy.screenshot(message, {overwrite: true, capture: 'viewport'});
-    const screenshot = `${Cypress.config('screenshotsFolder')}/${Cypress.spec.name
+    const screenshot = `${Cypress.config('screenshotsFolder')}/${Cypress.testingType
+    }/${Cypress.spec.name
     }/${message}.png`;
     addTestContext("Screenshot", screenshot);
 }
@@ -72,7 +73,7 @@ function getObject(maker) {
 Cypress.Commands.add('verifyPageNavigationTo', (page) => {
     cy.url().should('include', getObject(page).pageURLPath);
     addTestContext("Page navigation validated to page : " + getObject(page).pageName);
-    takeScreenshot("Page navigation validated to page : " + getObject(page).pageName);
+    takeScreenshot("Page navigation validated to page " + getObject(page).pageName);
 })
 
 /**
@@ -157,10 +158,12 @@ Cypress.Commands.add('clickNoScroll', (locator) => {
     takeScreenshot(locator[1] + " " + locator[2]);
 });
 
-//Take screenshot on failure, add log message
+/**
+ * Take screenshot on failure, add log message
+ */
 Cypress.on('test:after:run', (test, runnable) => {
     if (test.state === 'failed') {
-        const screenshot = `${Cypress.config('screenshotsFolder')}/${Cypress.spec.name}
+        const screenshot = `${Cypress.config('screenshotsFolder')}/${Cypress.testingType}/${Cypress.spec.name}
     /${runnable.parent.title} -- ${test.title} (failed).png`;
         addTestContext("Test status :" + test.state, screenshot);
     }

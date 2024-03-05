@@ -1,38 +1,36 @@
 const {defineConfig} = require("cypress");
+const cucumber = require('cypress-cucumber-preprocessor').default;
 
 module.exports = defineConfig({
-    projectId: 'dbdpvb',
+    projectId: 'j7zetb',
     experimentalCspAllowList: true,
     experimentalWebKitSupport: true,
     includeShadowDom: true,
     chromeWebSecurity: false,
     experimentalSourceRewriting: true,
-    screenshotsFolder: 'reports/screenshots',
+    screenshotsFolder: 'reports/mochawesome/screenshots',
     screenshotOnRunFailure: true,
     viewportWidth: 1536,
     viewportHeight: 960,
     e2e: {
-        defaultCommandTimeout: 10000,
+        defaultCommandTimeout: 1000,
         experimentalRunAllSpecs: true,
         setupNodeEvents(on, config) {
+            on('file:preprocessor', cucumber());
             require('cypress-mochawesome-reporter/plugin')(on);
-            require('./cypress/plugins/index.js')(on, config)
             return config;
         },
-        specPattern: 'cypress/e2e/*.feature',
+        specPattern: 'cypress/(e2e|api)/*.*',
         supportFile: "cypress/support/commands.js",
-        env: {
-            allureReuseAfterSpec: true
-        }
     },
     reporter: 'cypress-mochawesome-reporter',
-    video: true,
+    video: false,
     reporterOptions: {
         reportDir: 'reports/mochawesome',
         charts: true,
         reportPageTitle: 'Test Automation Result',
         embeddedScreenshots: true,
-        inlineAssets: true,
+        inlineAssets: false,
         saveAllAttempts: true,
         debug: true,
     }
