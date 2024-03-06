@@ -1,6 +1,9 @@
 name: Cypress Tests
 
 on:
+  schedule:
+    # Run at the end of every day
+    - cron: "0 0 * * *"
   push:
     branches:
       - main  # Adjust this branch name as needed
